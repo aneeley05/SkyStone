@@ -1,6 +1,8 @@
 
 ## Caution
-No Team-specific code should be placed or modified in this ``.../samples`` folder.
+**No Team-specific code should be placed or modified in this ``FtcRobotController`` module.**
+
+*just please don't add or edit code here. please...*
 
 Full or partial Samples should be Copied from here, and then Pasted into
 the team's folder, using the Android Studio cut and paste commands.
