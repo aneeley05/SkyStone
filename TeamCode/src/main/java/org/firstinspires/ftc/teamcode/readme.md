@@ -1,4 +1,4 @@
-## TeamCode Module
+## Wyvern TeamCode Module
 
 Welcome!
 
