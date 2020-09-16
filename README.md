@@ -1,10 +1,10 @@
 # Wyvern FTC Repository
 This repository contains 2 android studio projects.
 
-* The first one called [FtcRobotController]() contains example code snippets.
+* The first one called [FtcRobotController](https://github.com/aneeley05/SkyStone/tree/master/FtcRobotController) contains example code snippets.
 <br>*Note: Do not edit or add code in this project. It is for viewing only.*
 
-* The second is one called [TeamCode]() and it is where we will edit and create the code that we will upload to the robot.
+* The second is one called [TeamCode](https://github.com/aneeley05/SkyStone/tree/master/TeamCode) and it is where we will edit and create the code that we will upload to the robot.
 
 ## Im a programmer, what do I do?
 If you want to edit and contribute to the team code do the following:<br><br>
@@ -12,7 +12,7 @@ If you want to edit and contribute to the team code do the following:<br><br>
 If you know how to use git, simply clone this repository to your local machine and edit it that way.
 
 #### umm... english please.
-If you don't even know what a "git" is, then don't worry. Simply download [GitHub Desktop]() and download this repository. 
+If you don't even know what a "git" is, then don't worry. Simply download [GitHub Desktop](https://desktop.github.com/) and download this repository. 
 <br>When you want to save the changes you have made, click the button at the top of GitHub Desktop that says "push to origin" and that will update the public repository.
 
 #### im still confused.
