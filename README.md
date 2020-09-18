@@ -1,8 +1,8 @@
 # Wyvern FTC Repository
-This repository contains 2 android studio projects.
+This repository contains 2 android studio modules.
 
 * The first one called [FtcRobotController](https://github.com/aneeley05/SkyStone/tree/master/FtcRobotController) contains example code snippets.
-<br>*Note: Do not edit or add code in this project. It is for viewing only.*
+<br>*Note: Do not edit or add code in this module. It is for viewing only.*
 
 * The second is one called [TeamCode](https://github.com/aneeley05/SkyStone/tree/master/TeamCode) and it is where we will edit and create the code that we will upload to the robot.
 
