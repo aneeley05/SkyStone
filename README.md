@@ -16,7 +16,7 @@ If you don't even know what a "git" is, then don't worry. Simply download [GitHu
 <br>When you want to save the changes you have made, click the button at the top of GitHub Desktop that says "push to origin" and that will update the public repository.
 
 #### im still confused.
-Feel free to ask someone else on the team that knows what to do for help.
+Feel free to ask someone else on the team that knows what to do for help
 
 ## Getting Help
 ### User Documentation and Tutorials
