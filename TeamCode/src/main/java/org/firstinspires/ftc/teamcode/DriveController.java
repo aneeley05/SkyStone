@@ -1,5 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 /*
+* Authors:
+* Andrew
+* Tristen
+* 
+*
 * This code is written assuming the following motor configuration (by index):
 *
 *     FRONT
