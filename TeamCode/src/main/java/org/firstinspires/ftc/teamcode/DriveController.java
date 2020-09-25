@@ -68,7 +68,7 @@ public class DriveController {
 
     // A simple drive function to set the power of both motor arrays at the same time
     // TODO: WARNING MAKE SURE THAT MOTOR PAIRS 1+2 and 3+4 ARE SUPPOSED TO TURN IN THE SAME DIRECTION BEFORE TESTING
-    public void drive(int leftpower, int rightpower) {
+    public void drive(double leftpower, double rightpower) {
         motor1.setPower(leftpower);
         motor2.setPower(leftpower);
 

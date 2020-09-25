@@ -5,11 +5,11 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class ControllerInterpreter {
-    public float drive;
-    public float turn;
-    public float lpower;
-    public float rpower;
-    public float max;
+    public double drive;
+    public double turn;
+    public double lpower;
+    public double rpower;
+    public double max;
     public boolean flywheel;
 
     DriveController dcontrol;
@@ -32,6 +32,6 @@ public class ControllerInterpreter {
             rpower /= max;
         }
 
-        dcontrol.drive();
+        dcontrol.drive(lpower,rpower);
     }
 }
