@@ -16,6 +16,7 @@ public class TeleOpMode extends OpMode {
     @Override
     public void init() {
         telemetry.addData("Status", "Initialized");
+        telemetry.update();
     }
 
     /*
@@ -34,6 +35,7 @@ public class TeleOpMode extends OpMode {
     public void start() {
         runtime.reset();
         telemetry.addData("Status", "Starting...");
+        telemetry.update();
     }
 
     /*
@@ -42,6 +44,7 @@ public class TeleOpMode extends OpMode {
     @Override
     public void loop() {
         telemetry.addData("Status", "Run Time: " + runtime.toString());
+        telemetry.update();
     }
 
     /*
@@ -50,5 +53,6 @@ public class TeleOpMode extends OpMode {
     @Override
     public void stop() {
         telemetry.addData("Status", "Final Run Time: " + runtime.toString());
+        telemetry.update();
     }
 }
