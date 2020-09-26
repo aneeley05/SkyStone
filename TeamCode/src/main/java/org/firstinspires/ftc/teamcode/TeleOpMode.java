@@ -10,6 +10,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class TeleOpMode extends OpMode {
 
     private ElapsedTime runtime = new ElapsedTime();
+
+    ControllerInterpreter controllerInterpreter = new ControllerInterpreter();
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -45,6 +47,7 @@ public class TeleOpMode extends OpMode {
     public void loop() {
         telemetry.addData("Status", "Run Time: " + runtime.toString());
         telemetry.update();
+        controllerInterpreter.update(gamepad1);
     }
 
     /*
