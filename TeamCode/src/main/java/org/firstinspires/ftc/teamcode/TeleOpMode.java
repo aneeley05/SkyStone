@@ -19,6 +19,7 @@ public class TeleOpMode extends OpMode {
     public void init() {
         telemetry.addData("Status", "Initialized");
         telemetry.update();
+        controllerInterpreter.init(hardwareMap);
     }
 
     /*

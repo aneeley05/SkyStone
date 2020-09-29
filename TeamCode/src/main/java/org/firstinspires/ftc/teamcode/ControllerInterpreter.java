@@ -16,6 +16,7 @@ public class ControllerInterpreter {
 
     public void init(HardwareMap hwMap) {
         dcontrol = new DriveController(hwMap);
+        dcontrol.init();
     }
 
     public void update(Gamepad controller) {
