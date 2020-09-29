@@ -11,7 +11,7 @@ public class TeleOpMode extends OpMode {
 
     private ElapsedTime runtime = new ElapsedTime();
 
-    ControllerInterpreter controllerInterpreter = new ControllerInterpreter();
+    ControlInterpreter control = new ControlInterpreter();
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -19,7 +19,7 @@ public class TeleOpMode extends OpMode {
     public void init() {
         telemetry.addData("Status", "Initialized");
         telemetry.update();
-        controllerInterpreter.init(hardwareMap);
+        control.init(hardwareMap);
     }
 
     /*
@@ -27,8 +27,8 @@ public class TeleOpMode extends OpMode {
      * note: we probably won't need this
      */
     @Override
-    @Deprecated
     public void init_loop() {
+
     }
 
     /*
@@ -48,7 +48,7 @@ public class TeleOpMode extends OpMode {
     public void loop() {
         telemetry.addData("Status", "Run Time: " + runtime.toString());
         telemetry.update();
-        controllerInterpreter.update(gamepad1);
+        control.update(gamepad1);
     }
 
     /*
@@ -56,7 +56,7 @@ public class TeleOpMode extends OpMode {
      */
     @Override
     public void stop() {
-        telemetry.addData("Status", "Final Run Time: " + runtime.toString());
+        telemetry.addData("Status", "Total Run Time: " + runtime.toString());
         telemetry.update();
     }
 }
