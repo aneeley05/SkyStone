@@ -22,10 +22,10 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class DriveController {
     HardwareMap hwMap;
-    public DcMotor motor1;
-    public DcMotor motor2;
-    public DcMotor motor3;
-    public DcMotor motor4;
+    public DcMotor motortl;
+    public DcMotor motorbl;
+    public DcMotor motortr;
+    public DcMotor motorbr;
 
 
 
@@ -35,33 +35,33 @@ public class DriveController {
 
     public void init() {
         // Left motors
-        motor1 = hwMap.get(DcMotor.class, "motor1");
-        motor2 = hwMap.get(DcMotor.class, "motor2");
+        motortl = hwMap.get(DcMotor.class, "motor1");
+        motorbl = hwMap.get(DcMotor.class, "motor2");
 
         // Right Motors
-        motor4 = hwMap.get(DcMotor.class, "motor4");
-        motor3 = hwMap.get(DcMotor.class, "motor3");
+        motortr = hwMap.get(DcMotor.class, "motor3");
+        motorbr = hwMap.get(DcMotor.class, "motor4");
 
         // Forward left motors (might need to be swapped)
-        motor1.setDirection(DcMotorSimple.Direction.FORWARD);
-        motor2.setDirection(DcMotorSimple.Direction.FORWARD);
+        motortl.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorbl.setDirection(DcMotorSimple.Direction.FORWARD);
 
         // Reverse right motors (might need to be swapped)
-        motor4.setDirection(DcMotorSimple.Direction.REVERSE);
-        motor3.setDirection(DcMotorSimple.Direction.REVERSE);
+        motortr.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorbr.setDirection(DcMotorSimple.Direction.REVERSE);
 
         // Set all power to 0 by default
-        motor1.setPower(0);
-        motor2.setPower(0);
-        motor3.setPower(0);
-        motor4.setPower(0);
+        motortl.setPower(0);
+        motorbl.setPower(0);
+        motortr.setPower(0);
+        motorbr.setPower(0);
 
 
         // Set encoder mode
-        motor1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motor2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motor3.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motor4.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motortl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorbl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motortr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorbr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
     }
@@ -69,10 +69,10 @@ public class DriveController {
     // A simple drive function to set the power of both motor arrays at the same time
     // TODO: WARNING MAKE SURE THAT MOTOR PAIRS 1+2 and 3+4 ARE SUPPOSED TO TURN IN THE SAME DIRECTION BEFORE TESTING
     public void drive(double leftpower, double rightpower) {
-        motor1.setPower(leftpower);
-        motor2.setPower(leftpower);
+        motortl.setPower(leftpower);
+        motorbl.setPower(leftpower);
 
-        motor4.setPower(rightpower);
-        motor3.setPower(rightpower);
+        motortr.setPower(rightpower);
+        motorbr.setPower(rightpower);```
     }
 }
