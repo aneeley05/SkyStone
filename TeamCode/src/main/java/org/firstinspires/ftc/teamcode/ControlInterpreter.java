@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class ControllerInterpreter {
+public class ControlInterpreter {
     public double drive;
     public double turn;
     public double lpower;
@@ -15,14 +15,18 @@ public class ControllerInterpreter {
     DriveController dcontrol;
 
     public void init(HardwareMap hwMap) {
+        // Create an instance of, and initialize the drive controller
         dcontrol = new DriveController(hwMap);
+        dcontrol.init();
     }
 
     public void update(Gamepad controller) {
+        // Controller mapping
         drive = -controller.left_stick_y;
         turn = controller.left_stick_x;
         flywheel = controller.left_bumper;
 
+        // This (supposedly) combines turn and drive for blended movement
         lpower = drive + turn;
         rpower = drive - turn;
         max = Math.max(Math.abs(lpower), Math.abs(rpower));
