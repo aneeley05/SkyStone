@@ -6,7 +6,6 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "Default_OpMode", group = "OpModes")
-@Disabled
 public class TeleOpMode extends OpMode {
 
     private ElapsedTime runtime = new ElapsedTime();

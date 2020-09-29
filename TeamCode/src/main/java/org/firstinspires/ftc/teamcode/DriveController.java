@@ -73,6 +73,6 @@ public class DriveController {
         motorbl.setPower(leftpower);
 
         motortr.setPower(rightpower);
-        motorbr.setPower(rightpower);```
+        motorbr.setPower(rightpower);
     }
 }
