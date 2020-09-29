@@ -8,8 +8,8 @@ package org.firstinspires.ftc.teamcode;
 * This code is written assuming the following motor configuration (by index):
 *
 *     FRONT
+*     0---2
 *     1---3
-*     2---4
 *     ---
 *     BACK
 *
@@ -35,12 +35,12 @@ public class DriveController {
 
     public void init() {
         // Left motors
-        motortl = hwMap.get(DcMotor.class, "motor1");
-        motorbl = hwMap.get(DcMotor.class, "motor2");
+        motortl = hwMap.get(DcMotor.class, "motor0");
+        motorbl = hwMap.get(DcMotor.class, "motor1");
 
         // Right Motors
-        motortr = hwMap.get(DcMotor.class, "motor3");
-        motorbr = hwMap.get(DcMotor.class, "motor4");
+        motortr = hwMap.get(DcMotor.class, "motor2");
+        motorbr = hwMap.get(DcMotor.class, "motor3");
 
         // Forward left motors (might need to be swapped)
         motortl.setDirection(DcMotorSimple.Direction.FORWARD);
