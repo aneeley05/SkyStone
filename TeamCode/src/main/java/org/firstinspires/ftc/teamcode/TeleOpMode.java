@@ -20,7 +20,6 @@ public class TeleOpMode extends OpMode {
     @Override
     public void init() {
         telemetry.addData("Status", "Initialized");
-        telemetry.update();
         control.init(hardwareMap);
         gamepad1.setUser(GamepadUser.ONE); // Possible solution for the gamepad issue
     }
@@ -41,7 +40,6 @@ public class TeleOpMode extends OpMode {
     public void start() {
         runtime.reset();
         telemetry.addData("Status", "Starting...");
-        telemetry.update();
     }
 
     /*
