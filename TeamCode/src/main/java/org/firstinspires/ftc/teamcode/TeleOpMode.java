@@ -13,7 +13,6 @@ public class TeleOpMode extends OpMode {
 
     ControlInterpreter control = new ControlInterpreter();
 
-    String controlData = "NULL";
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -47,10 +46,9 @@ public class TeleOpMode extends OpMode {
      */
     @Override
     public void loop() {
-        // Outputs 0,0,false for no reason
-        controlData = control.controllerData(gamepad1);
         telemetry.addData("Status", "Run Time: " + runtime.toString());
-        telemetry.addData("ControllerData", controlData);
+        // Outputs 0,0,false for no reason
+        telemetry.addData("ControllerData", control.controllerData(gamepad1));
     }
 
     /*

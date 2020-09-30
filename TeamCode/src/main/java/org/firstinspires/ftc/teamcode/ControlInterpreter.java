@@ -44,7 +44,6 @@ public class ControlInterpreter {
         drive = -controller.left_stick_y;
         turn = controller.left_stick_x;
         flywheel = controller.left_bumper;
-
         return "Drive: " + drive + " Turn: " + turn + " Flywheel: " + flywheel;
     }
 }
