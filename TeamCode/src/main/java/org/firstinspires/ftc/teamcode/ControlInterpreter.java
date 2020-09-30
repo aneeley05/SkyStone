@@ -41,10 +41,10 @@ public class ControlInterpreter {
 
     public String controllerData(Gamepad controller) {
         // Controller mapping
-        double driveB = -controller.left_stick_y;
-        double turnB = controller.left_stick_x;
-        boolean flywheelB = controller.left_bumper;
+        drive = -controller.left_stick_y;
+        turn = controller.left_stick_x;
+        flywheel = controller.left_bumper;
 
-        return "Drive: " + driveB + " Turn: " + turnB + " Flywheel: " + flywheelB;
+        return "Drive: " + drive + " Turn: " + turn + " Flywheel: " + flywheel;
     }
 }

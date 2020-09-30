@@ -47,10 +47,10 @@ public class TeleOpMode extends OpMode {
      */
     @Override
     public void loop() {
-        controlData = control.controllerData(gamepad2);
+        // Outputs 0,0,false for no reason
+        controlData = control.controllerData(gamepad1);
         telemetry.addData("Status", "Run Time: " + runtime.toString());
         telemetry.addData("ControllerData", controlData);
-
     }
 
     /*
