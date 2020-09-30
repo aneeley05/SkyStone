@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import org.firstinspires.ftc.robotcore.internal.ui.GamepadUser;
 
 @TeleOp(name = "Default_OpMode", group = "OpModes")
 public class TeleOpMode extends OpMode {
@@ -21,6 +22,7 @@ public class TeleOpMode extends OpMode {
         telemetry.addData("Status", "Initialized");
         telemetry.update();
         control.init(hardwareMap);
+        gamepad1.setUser(GamepadUser.ONE); // Possible solution for the gamepad issue
     }
 
     /*
