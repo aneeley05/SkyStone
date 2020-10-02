@@ -1,9 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 /*
-* Authors:
-* Andrew
-* Tristen
-* 
 *
 * This code is written assuming the following motor configuration (by index):
 *
@@ -12,6 +8,10 @@ package org.firstinspires.ftc.teamcode;
 *     1---3
 *     ---
 *     BACK
+*
+*
+* flywheel: 4,5
+*
 *
 * */
 
@@ -26,6 +26,9 @@ public class DriveController {
     public DcMotor motorbl;
     public DcMotor motortr;
     public DcMotor motorbr;
+
+    public DcMotor motorfly1;
+    public DcMotor motorfly2;
 
 
 
@@ -42,6 +45,10 @@ public class DriveController {
         motortr = hwMap.get(DcMotor.class, "motor2");
         motorbr = hwMap.get(DcMotor.class, "motor3");
 
+        //flywheel motors
+        motorfly1 = hwMap.get(DcMotor.class, "motor4");
+        motorfly2 = hwMap.get(DcMotor.class, "motor5");
+
         // Forward left motors (might need to be swapped)
         motortl.setDirection(DcMotorSimple.Direction.FORWARD);
         motorbl.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -50,11 +57,17 @@ public class DriveController {
         motortr.setDirection(DcMotorSimple.Direction.REVERSE);
         motorbr.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        //forward flywheel motors
+        motorfly1.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorfly2.setDirection(DcMotorSimple.Direction.FORWARD);
+
         // Set all power to 0 by default
         motortl.setPower(0);
         motorbl.setPower(0);
         motortr.setPower(0);
         motorbr.setPower(0);
+        motorfly1.setPower(0);
+        motorfly2.setPower(0);
 
 
         // Set encoder mode
@@ -62,6 +75,8 @@ public class DriveController {
         motorbl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motortr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorbr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorfly1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorfly2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
     }
@@ -74,5 +89,11 @@ public class DriveController {
 
         motortr.setPower(rightpower);
         motorbr.setPower(rightpower);
+    }
+
+    // a simple flywheel function to set the power to the flywheel
+    public void flywheelPower(double flypower){
+        motorfly1.setPower(flypower);
+        motorfly2.setPower(flypower);
     }
 }
