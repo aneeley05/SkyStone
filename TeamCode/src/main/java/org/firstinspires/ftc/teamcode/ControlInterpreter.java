@@ -51,6 +51,13 @@ public class ControlInterpreter {
             flywheelSpeed+=50;
         }
 
+        if(flywheelSpeed > 100) {
+            flywheelSpeed = 100;
+        }
+        if(flywheelSpeed < 0) {
+            flywheelSpeed = 0;
+        }
+
         dcontrol.flywheelPower(flywheelSpeed);
     }
 
@@ -58,7 +65,6 @@ public class ControlInterpreter {
         // Controller mapping
         drive = -controller.left_stick_y;
         turn = controller.left_stick_x;
-        flywheel = controller.left_bumper;
-        return "Drive: " + drive + " Turn: " + turn + " Flywheel: " + flywheel;
+        return "Drive: " + drive + " Turn: " + turn + " Flywheel: " + flywheelSpeed;
     }
 }
