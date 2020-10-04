@@ -1,23 +1,22 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class ControlInterpreter {
     public double drive;
     public double turn;
-    public double lpower = 0;
-    public double rpower = 0;
-    public double max;
+    public double lPower = 0;
+    public double rPower = 0;
     public double flywheelSpeed = 0;
+    public double max;
 
-    DriveController dcontrol;
+    DriveController dControl;
 
     public void init(HardwareMap hwMap) {
         // Create an instance of, and initialize the drive controller
-        dcontrol = new DriveController(hwMap);
-        dcontrol.init();
+        dControl = new DriveController(hwMap);
+        dControl.init();
     }
 
     public void update(Gamepad controller) {
@@ -30,15 +29,15 @@ public class ControlInterpreter {
         boolean flywheelDown50 = controller.dpad_left;
 
         // Drive interpretation
-        lpower = drive + turn;
-        rpower = drive - turn;
-        max = Math.max(Math.abs(lpower), Math.abs(rpower));
+        lPower = drive + turn;
+        rPower = drive - turn;
+        max = Math.max(Math.abs(lPower), Math.abs(rPower));
         if (max > 1.0)
         {
-            lpower /= max;
-            rpower /= max;
+            lPower /= max;
+            rPower /= max;
         }
-        dcontrol.drive(lpower,rpower);
+        dControl.setDrivePower(lPower,rPower);
 
         // Flywheel interpretation
         if (flywheelUp10) {
@@ -58,7 +57,7 @@ public class ControlInterpreter {
             flywheelSpeed = 0;
         }
 
-        dcontrol.flywheelPower(flywheelSpeed);
+        dControl.setFlywheelPower(flywheelSpeed);
     }
 
     public String controllerData(Gamepad controller) {

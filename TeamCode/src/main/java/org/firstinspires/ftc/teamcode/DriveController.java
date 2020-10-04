@@ -22,13 +22,13 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class DriveController {
     HardwareMap hwMap;
-    public DcMotor motortl;
-    public DcMotor motorbl;
-    public DcMotor motortr;
-    public DcMotor motorbr;
+    public DcMotor motorTL;
+    public DcMotor motorBL;
+    public DcMotor motorTR;
+    public DcMotor motorBR;
 
-    public DcMotor motorfly1;
-    public DcMotor motorfly2;
+    public DcMotor motorFly1;
+    public DcMotor motorFly2;
 
 
 
@@ -38,62 +38,62 @@ public class DriveController {
 
     public void init() {
         // Left motors
-        motortl = hwMap.get(DcMotor.class, "motor0");
-        motorbl = hwMap.get(DcMotor.class, "motor1");
+        motorTL = hwMap.get(DcMotor.class, "motor0");
+        motorBL = hwMap.get(DcMotor.class, "motor1");
 
         // Right Motors
-        motortr = hwMap.get(DcMotor.class, "motor2");
-        motorbr = hwMap.get(DcMotor.class, "motor3");
+        motorTR = hwMap.get(DcMotor.class, "motor2");
+        motorBR = hwMap.get(DcMotor.class, "motor3");
 
         //flywheel motors
-        motorfly1 = hwMap.get(DcMotor.class, "motor4");
-        motorfly2 = hwMap.get(DcMotor.class, "motor5");
+        motorFly1 = hwMap.get(DcMotor.class, "motor4");
+        motorFly2 = hwMap.get(DcMotor.class, "motor5");
 
         // Forward left motors (might need to be swapped)
-        motortl.setDirection(DcMotorSimple.Direction.FORWARD);
-        motorbl.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorTL.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorBL.setDirection(DcMotorSimple.Direction.FORWARD);
 
         // Reverse right motors (might need to be swapped)
-        motortr.setDirection(DcMotorSimple.Direction.REVERSE);
-        motorbr.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorTR.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorBR.setDirection(DcMotorSimple.Direction.REVERSE);
 
         //forward flywheel motors
-        motorfly1.setDirection(DcMotorSimple.Direction.FORWARD);
-        motorfly2.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorFly1.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorFly2.setDirection(DcMotorSimple.Direction.FORWARD);
 
         // Set all power to 0 by default
-        motortl.setPower(0);
-        motorbl.setPower(0);
-        motortr.setPower(0);
-        motorbr.setPower(0);
-        motorfly1.setPower(0);
-        motorfly2.setPower(0);
+        motorTL.setPower(0);
+        motorBL.setPower(0);
+        motorTR.setPower(0);
+        motorBR.setPower(0);
+        motorFly1.setPower(0);
+        motorFly2.setPower(0);
 
 
         // Set encoder mode
-        motortl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorbl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motortr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorbr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorfly1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorfly2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorTL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorTR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorFly1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorFly2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
     }
 
     // A simple drive function to set the power of both motor arrays at the same time
     // TODO: WARNING MAKE SURE THAT MOTOR PAIRS 1+2 and 3+4 ARE SUPPOSED TO TURN IN THE SAME DIRECTION BEFORE TESTING
-    public void drive(double leftpower, double rightpower) {
-        motortl.setPower(leftpower);
-        motorbl.setPower(leftpower);
+    public void setDrivePower(double leftpower, double rightpower) {
+        motorTL.setPower(leftpower);
+        motorBL.setPower(leftpower);
 
-        motortr.setPower(rightpower);
-        motorbr.setPower(rightpower);
+        motorTR.setPower(rightpower);
+        motorBR.setPower(rightpower);
     }
 
     // a simple flywheel function to set the power to the flywheel
-    public void flywheelPower(double flypower){
-        motorfly1.setPower(flypower);
-        motorfly2.setPower(flypower);
+    public void setFlywheelPower(double flypower){
+        motorFly1.setPower(flypower);
+        motorFly2.setPower(flypower);
     }
 }
