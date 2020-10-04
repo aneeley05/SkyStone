@@ -9,7 +9,6 @@ import org.firstinspires.ftc.robotcore.internal.ui.GamepadUser;
 public class TeleOpMode extends OpMode {
 
     private final ElapsedTime runtime = new ElapsedTime();
-
     ControlInterpreter control = new ControlInterpreter();
 
     /*
@@ -19,7 +18,6 @@ public class TeleOpMode extends OpMode {
     public void init() {
         telemetry.addData("Status", "Initialized");
         control.init(hardwareMap);
-        gamepad1.setUser(GamepadUser.ONE); // Possible solution for the gamepad issue
     }
 
     /*
@@ -45,8 +43,9 @@ public class TeleOpMode extends OpMode {
      */
     @Override
     public void loop() {
+        control.update(gamepad1);
+
         telemetry.addData("Status", "Run Time: " + runtime.toString());
-        // Outputs 0,0,false for no reason
         telemetry.addData("ControllerData", control.controllerData(gamepad1));
     }
 

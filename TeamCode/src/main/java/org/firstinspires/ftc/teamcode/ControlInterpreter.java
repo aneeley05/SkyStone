@@ -39,7 +39,7 @@ public class ControlInterpreter {
         }
         dControl.setDrivePower(lPower,rPower);
 
-        // Flywheel interpretation
+        // DPAD speed changes
         if (flywheelUp10) {
             flywheelSpeed=+10;
         } else if (flywheelDown10) {
@@ -50,6 +50,7 @@ public class ControlInterpreter {
             flywheelSpeed+=50;
         }
 
+        // Clipping max/min flywheel speed values
         if(flywheelSpeed > 100) {
             flywheelSpeed = 100;
         }

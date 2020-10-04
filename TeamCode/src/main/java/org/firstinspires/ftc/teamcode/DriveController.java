@@ -1,24 +1,25 @@
 package org.firstinspires.ftc.teamcode;
-/*
-*
-* This code is written assuming the following motor configuration (by index):
-*
-*     FRONT
-*     0---2
-*     1---3
-*     ---
-*     BACK
-*
-*
-* flywheel: 4,5
-*
-*
-* */
-
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+
+/*
+ *
+ * This code is written assuming the following motor configuration (by index):
+ *
+ *     FRONT
+ *     0---2
+ *     1---3
+ *     ---
+ *     BACK
+ *
+ *
+ * flywheel: 4,5
+ *
+ *
+ * */
+
 
 public class DriveController {
     HardwareMap hwMap;
@@ -45,19 +46,19 @@ public class DriveController {
         motorTR = hwMap.get(DcMotor.class, "motor2");
         motorBR = hwMap.get(DcMotor.class, "motor3");
 
-        //flywheel motors
+        // Flywheel motors
         motorFly1 = hwMap.get(DcMotor.class, "motor4");
         motorFly2 = hwMap.get(DcMotor.class, "motor5");
 
-        // Forward left motors (might need to be swapped)
+        // Forward left motors (unconfirmed)
         motorTL.setDirection(DcMotorSimple.Direction.FORWARD);
         motorBL.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        // Reverse right motors (might need to be swapped)
+        // Reverse right motors (unconfirmed)
         motorTR.setDirection(DcMotorSimple.Direction.REVERSE);
         motorBR.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        //forward flywheel motors
+        //forward flywheel motors (unconfirmed)
         motorFly1.setDirection(DcMotorSimple.Direction.FORWARD);
         motorFly2.setDirection(DcMotorSimple.Direction.FORWARD);
 
